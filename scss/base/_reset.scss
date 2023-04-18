@@ -1,6 +1,5 @@
 body {
-	
-    
+	min-width: $base-min-width;
 }
 
 h1 {
@@ -36,9 +35,13 @@ a {
 }
 
 .btn {
-	box-shadow: none;
+    &.btn-link {
+        color: $black;
+        text-decoration: underline;
 
-	&:hover {
-		box-shadow: 7px 7px 15px rgba(0, 123, 255, 0.4);
-	}
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
 }

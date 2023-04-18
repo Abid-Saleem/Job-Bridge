@@ -10,6 +10,10 @@
   overflow: hidden;
 }
 
+body {
+  min-width: 360px;
+}
+
 h1 {
   font-size: 30px;
 }
@@ -41,13 +45,12 @@ a {
   position: relative;
 }
 
-.btn {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.btn.btn-link {
+  color: #000;
+  text-decoration: underline;
 }
-.btn:hover {
-  -webkit-box-shadow: 7px 7px 15px rgba(0, 123, 255, 0.4);
-          box-shadow: 7px 7px 15px rgba(0, 123, 255, 0.4);
+.btn.btn-link:hover, .btn.btn-link:focus {
+  color: #78b258;
 }
 
 /* Slick slider styles */
@@ -122,4 +125,73 @@ a {
 
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+.header {
+  font-size: 15px;
+  z-index: 9;
+}
+@media (min-width: 992px) {
+  .header {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    font-size: 15px;
+  }
+}
+.header .logo {
+  width: 222px;
+}
+@media (min-width: 992px) {
+  .header .logo {
+    width: 155px;
+  }
+}
+@media (min-width: 1200px) {
+  .header .logo {
+    width: 200px;
+  }
+}
+@media (min-width: 1470px) {
+  .header .logo {
+    width: 222px;
+  }
+}
+.header .btn {
+  min-width: 125px;
+  padding: 8px 20px 10px;
+  letter-spacing: 0.75px;
+}
+@media (min-width: 992px) {
+  .header .btn {
+    font-size: 13px;
+    min-width: 100px;
+    padding: 8px 15px 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .header .btn {
+    font-size: 15px;
+    min-width: 125px;
+    padding: 8px 20px 10px;
+  }
+}
+
+.navigation {
+  letter-spacing: 0.25px;
+}
+.navigation > li > a {
+  color: #000;
+}
+.navigation > li > a i {
+  font-size: 11px;
+}
+.navigation .dropdown-menu {
+  background: #fff;
+  border: 0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
 }
