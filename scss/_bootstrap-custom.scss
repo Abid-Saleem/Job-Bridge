@@ -1,0 +1,409 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+$white:    #fff;
+$off-white: #e1e1e1;
+$gray-100: #f8f9fa;
+$gray-200: #f5f5f5;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+$light-green: #bbe05a;
+$gray-dark: #292D32;
+$gray-dark-100: #30312b;
+$gray-dark-200: #242829;
+$dark-gray-300: #282828;
+$sky-blue: #f3fbff;
+
+$blue:    #79cfff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #c82525;
+$orange:  #fd7e14;
+$yellow:  #ffcc51;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+
+// scss-docs-start colors-map
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800,
+	"light-green": $light-green
+);
+// scss-docs-end colors-map
+
+$primary:       $red;
+$secondary:     $gray-200;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-dark;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+	"white":      $white
+);
+// scss-docs-end theme-colors-map
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:   4.5;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:      $black;
+$color-contrast-light:     $white;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                true;
+$enable-rounded:              true;
+$enable-shadows:              false;
+$enable-gradients:            false;
+$enable-transitions:          true;
+$enable-reduced-motion:       true;
+$enable-smooth-scroll:        true;
+$enable-grid-classes:         true;
+$enable-button-pointers:      true;
+$enable-rfs:                  true;
+$enable-validation-icons:     true;
+$enable-negative-margins:     false;
+$enable-deprecation-messages: true;
+$enable-important-utilities:  true;
+
+// $spacer: 0.625rem;
+// $spacers: (
+//   0: 0,
+//   5: $spacer * .5,
+//   10: $spacer * 1,
+//   15: $spacer * 1.5,
+//   20: $spacer * 2,
+//   25: $spacer * 2.5,
+//   30: $spacer * 3,
+//   35: $spacer * 3.5,
+//   40: $spacer * 4,
+//   45: $spacer * 4.5,
+//   50: $spacer * 5,
+//   55: $spacer * 5.5,
+//   60: $spacer * 6,
+//   65: $spacer * 6.5,
+//   70: $spacer * 7,
+//   75: $spacer * 7.5,
+//   80: $spacer * 8,
+//   85: $spacer * 8.5,
+//   90: $spacer * 9,
+//   95: $spacer * 9.5,
+//   100: $spacer * 10,
+//   105: $spacer * 10.5,
+//   110: $spacer * 11,
+//   115: $spacer * 11.5,
+//   120: $spacer * 12,
+//   125: $spacer * 12.5,
+//   130: $spacer * 13,
+//   135: $spacer * 13.5,
+//   140: $spacer * 14,
+//   145: $spacer * 14.5,
+//   150: $spacer * 15,
+//   155: $spacer * 15.5,
+//   160: $spacer * 16,
+//   165: $spacer * 16.5,
+//   170: $spacer * 17,
+//   175: $spacer * 17.5,
+//   180: $spacer * 18,
+//   185: $spacer * 18.5,
+//   190: $spacer * 19,
+//   195: $spacer * 19.5,
+//   200: $spacer * 20,
+//   205: $spacer * 20.5,
+//   210: $spacer * 21
+// );
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+// scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1145px
+);
+// scss-docs-end container-max-widths
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12;
+$grid-gutter-width:           30px;
+
+$gutters: $spacers;
+
+$border-radius:               0;
+$border-radius-sm:            0;
+$border-radius-lg:            0;
+$border-radius-xl:            0;
+$border-radius-2xl:           0;
+$border-radius-pill:          0;
+
+// Container padding
+
+$container-padding-x: $grid-gutter-width;
+
+$base-min-width: 320px;
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:   Arial, sans-serif;
+$font-family-serif:        Georgia, serif;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$font-family-base:          $font-family-sans-serif;
+$body-bg:                   $sky-blue;
+$body-color:                $dark;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                              $primary;
+$link-decoration:                         none;
+$link-shade-percentage:                   20%;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage);
+$link-hover-decoration:                   null;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom:   20px;
+
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
+$font-size-root:              null;
+$font-size-base:              0.875rem;
+$line-height-base:            1.286;
+
+$h1-font-size:                52px;
+$h2-font-size:                32px;
+$h3-font-size:                22px;
+$h4-font-size:                18px;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+// scss-docs-end font-sizes
+
+$headings-margin-bottom:      $spacer * 2;
+$headings-font-family:        $font-family-serif;
+$headings-font-style:         null;
+$headings-font-weight:        400;
+$headings-line-height:        1.045;
+$headings-color:              null;
+
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 2.75rem,
+  2: 2.563rem,
+  3: 1.9rem,
+  4: 1.563rem,
+  5: 1.25rem,
+  6: 1rem
+);
+
+$display-font-weight: 500;
+$display-line-height: $headings-line-height;
+
+// Navbar
+
+$navbar-padding-y:                  15px;
+$navbar-padding-x:                  null;
+
+$navbar-nav-link-padding-x:         13px;
+
+$navbar-brand-font-size:            $font-size-lg;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2;
+$navbar-brand-height:               $navbar-brand-font-size * $line-height-base;
+$navbar-brand-margin-end:           1rem;
+
+$navbar-toggler-padding-y:          .4rem;
+$navbar-toggler-padding-x:          .4rem;
+$navbar-toggler-font-size:          14px;
+$navbar-toggler-border-radius:      $btn-border-radius;
+$navbar-toggler-focus-width:        1px;
+$navbar-toggler-transition:         box-shadow .15s ease-in-out;
+
+$navbar-dark-color:                 $off-white;
+$navbar-dark-hover-color:           $primary;
+$navbar-dark-active-color:          $primary;
+$navbar-dark-disabled-color:        rgba($white, .25);
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color:  rgba($white, .1);
+
+$navbar-dark-brand-color:                 $navbar-dark-active-color;
+$navbar-dark-brand-hover-color:           $navbar-dark-active-color;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               9px;
+$btn-padding-x:               20px;
+$btn-font-family:             $input-btn-font-family;
+$btn-font-size:               12px;
+$btn-line-height:             18px;
+$btn-white-space:             null;
+
+$btn-padding-y-sm:            6px;
+$btn-padding-x-sm:            15px;
+$btn-font-size-sm:            12px;
+
+$btn-padding-y-lg:            14px;
+$btn-padding-x-lg:            20px;
+$btn-font-size-lg:            12px;
+
+$btn-border-width:            $input-btn-border-width;
+
+$btn-font-weight:             $font-weight-normal;
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+$btn-focus-width:             $input-btn-focus-width;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+$btn-disabled-opacity:        .65;
+$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125);
+
+$btn-link-color:              $link-color;
+$btn-link-hover-color:        $link-hover-color;
+$btn-link-disabled-color:     $gray-600;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius;
+$btn-border-radius-sm:        $border-radius-sm;
+$btn-border-radius-lg:        $border-radius-lg;
+
+// Forms
+
+// scss-docs-start form-text-variables
+$form-text-margin-top:                  8px;
+$form-text-font-size:                   12px;
+$form-text-font-style:                  normal;
+$form-text-font-weight:                 null;
+$form-text-color:                       $text-muted;
+// scss-docs-end form-text-variables
+
+// scss-docs-start form-label-variables
+$form-label-margin-bottom:              8px;
+$form-label-font-size:                  12px;
+$form-label-color:                     rgba(41, 45, 50, 0.6);
+// scss-docs-end form-label-variables
+
+// scss-docs-start form-input-variables
+$input-padding-y:                       8px;
+$input-padding-x:                       20px;
+$input-font-size:                       14px;
+$input-line-height:                     18px;
+
+$input-bg:                              $body-bg;
+
+$input-color:                           $body-color;
+$input-border-color:                    $dark;
+$input-border-width:                    1px;
+$input-box-shadow:                      none;
+
+$input-border-radius:                   0;
+
+$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              $primary;
+$input-focus-color:                     $input-color;
+$input-focus-width:                     none;
+$input-focus-box-shadow:                none;
+
+$input-placeholder-color:               rgba(41, 45, 50, 0.3);;
+$input-plaintext-color:                 $body-color;
+
+$input-height-border:                   $input-border-width * 2;
+
+
+// scss-docs-start badge-variables
+$badge-font-size:                   .75em;
+$badge-font-weight:                 $font-weight-normal;
+$badge-color:                       $white;
+$badge-padding-y:                   5px;
+$badge-padding-x:                   9px;
+$badge-border-radius:               $border-radius;
+// scss-docs-end badge-variables
